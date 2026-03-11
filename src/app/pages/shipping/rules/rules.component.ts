@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { SharedService } from '../services/shared.service';
 import { error } from '@angular/compiler/src/util';
 import { StoreService } from '../../store-management/services/store.service';
-import * as moment from 'moment';
+import moment from 'moment';
 import { ToastrService } from 'ngx-toastr';
 @Component({
     selector: 'ngx-rules',

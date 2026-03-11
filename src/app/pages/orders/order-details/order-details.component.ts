@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { NbDialogService } from '@nebular/theme';
 import { OrdersService } from '../services/orders.service';
-import * as moment from 'moment';
+import moment from 'moment';
 import { OrderInvoiceComponent } from '../order-invoice/order-invoice';
 import { OrderHistoryComponent } from '../order-history/order-history';
 import { OrderTransactionComponent } from '../order-transaction/order-transaction';

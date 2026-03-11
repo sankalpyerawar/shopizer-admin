@@ -6,7 +6,7 @@ import { ProductService } from '../../services/product.service';
 import { ToastrService } from 'ngx-toastr';
 import { TranslateService } from '@ngx-translate/core';
 import { ConfigService } from '../../../../shared/services/config.service';
-import * as moment from 'moment';
+import moment from 'moment';
 import { InventoryService } from '../../services/inventory.service';
 import { formatMoney } from '../../../../shared/validation/price-validation';
 import { slugify } from '../../../../shared/utils/slugifying';

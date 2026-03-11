@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 import { ManufactureService } from '../../../shared/services/manufacture.service';
 import { ConfigService } from '../../../shared/services/config.service';
-import * as moment from 'moment';
+import moment from 'moment';
 import { ToastrService } from 'ngx-toastr';
 import { NbDialogService } from '@nebular/theme';
 import { ProductService } from '../services/product.service';

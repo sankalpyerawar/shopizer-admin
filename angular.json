@@ -19,7 +19,8 @@
               "ngx-lightbox",
               "xhook"
             ],
-            "preserveSymlinks": true,
+            "preserveSymlinks": false,
+            "buildOptimizer": false,
             "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
