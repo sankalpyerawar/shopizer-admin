@@ -1,5 +1,5 @@
 <div class="inline-block">
-  <ngx-file-drop [multiple]="multi" class="dropzone" (onFileDrop)="onFilesChange()" [accept]="'image/*'">
+  <ngx-file-drop [multiple]="multi" class="dropzone" (onFileDrop)="onFilesChange($event)" [accept]="'image/*'">
     <ng-template ngx-file-drop-content-tmp>
       Drop files here to upload
     </ng-template>
