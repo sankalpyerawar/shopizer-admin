@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { NgxFileDropEntry } from 'ngx-file-drop';
 
 @Component({
   selector: 'upload',
@@ -8,16 +9,23 @@ import { Component, Input } from '@angular/core';
 export class UploadComponent {
 
   files: File[] = [];
-  validDrag: Boolean;
   @Input() multi: string;
 
   @Input() onUpload = (files: File[]) => { };
 
-  onFilesChange() {
-
-    this.onUpload([...this.files]);
-
-    this.files.length = 0;
+  onFilesChange(droppedFiles: NgxFileDropEntry[]) {
+    const files: File[] = [];
+    for (const droppedFile of droppedFiles) {
+      if (droppedFile.fileEntry.isFile) {
+        const fileEntry = droppedFile.fileEntry as FileSystemFileEntry;
+        fileEntry.file((file: File) => {
+          files.push(file);
+          if (files.length === droppedFiles.length) {
+            this.onUpload(files);
+          }
+        });
+      }
+    }
   }
 
 }
