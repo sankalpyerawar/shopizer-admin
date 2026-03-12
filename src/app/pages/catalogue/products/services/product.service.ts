@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { StorageService } from '../../../shared/services/storage.service';
 import { UrlTree, UrlSegment, UrlSegmentGroup, ActivatedRoute, Router, PRIMARY_OUTLET } from '@angular/router';
 import {Location} from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +16,7 @@ export class ProductService {
   constructor(
     private crudService: CrudService,
     private storageService: StorageService,
+    private http: HttpClient,
   ) {
   }
 
@@ -94,6 +97,20 @@ export class ProductService {
     const g: UrlSegmentGroup = tree.root.children[PRIMARY_OUTLET];
     const s: UrlSegment[] = g.segments; // returns 2 segments
     return s[4].path;
+  }
+
+  validateProductImport(csvData: any[]): Observable<any> {
+    const params = { store: this.storageService.getMerchant() };
+    return this.crudService.post(`/v2/private/product/import/validate`, csvData, { params });
+  }
+
+  executeProductImport(csvData: any[], mode: string): Observable<any> {
+    const params = { store: this.storageService.getMerchant(), mode };
+    return this.crudService.post(`/v2/private/product/import/execute`, csvData, { params });
+  }
+
+  downloadImportTemplate(): Observable<Blob> {
+    return this.http.get(`${environment.apiUrl}/v2/private/product/import/template`, { responseType: 'blob' });
   }
 
 }
