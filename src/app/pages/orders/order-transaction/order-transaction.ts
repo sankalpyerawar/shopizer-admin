@@ -1,4 +1,4 @@
-import { Component, } from '@angular/core';
+import { Component } from '@angular/core';
 import { NbDialogRef } from '@nebular/theme';
 import moment from 'moment';
 @Component({

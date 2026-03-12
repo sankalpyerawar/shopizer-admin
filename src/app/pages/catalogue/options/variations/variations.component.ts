@@ -10,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'ngx-variations-list',
   templateUrl: './variations.component.html',
-  styleUrls: ['./variations.component.scss']
+  styleUrls: ['./variations.component.scss'],
 })
 export class VariationsListComponent implements OnInit {
   source: LocalDataSource = new LocalDataSource();
@@ -58,17 +58,17 @@ export class VariationsListComponent implements OnInit {
         custom: [
           {
             name: 'edit',
-            title: '<i class="nb-edit"></i>'
+            title: '<i class="nb-edit"></i>',
           },
           {
             name: 'delete',
-            title: '<i class="nb-trash"></i>'
+            title: '<i class="nb-trash"></i>',
           },
           // {
           //   name: 'delete',
           //   title: '<i class="nb-info"></i>'
           // }
-        ]
+        ],
       },
       columns: {
         id: {
@@ -86,9 +86,7 @@ export class VariationsListComponent implements OnInit {
           title: this.translate.instant('PRODUCT_ATTRIBUTES.OPTION_NAME'),
           type: 'string',
           filter: true,
-          valuePrepareFunction: (value) => {
-            return value.name;
-          }
+          valuePrepareFunction: (value) => value.name,
         },
         values: {
           title: this.translate.instant('COMPONENTS.OPTIONS_VALUE'),
@@ -96,10 +94,10 @@ export class VariationsListComponent implements OnInit {
           filter: false,
           valuePrepareFunction: (data) => {
             if (data != null) {
-              let value = data.map(a => a.name).join(", ");
+              const value = data.map(a => a.name).join(', ');
               return value;
             }
-          }
+          },
         },
         // productTypes: {
         //   title: this.translate.instant('COMPONENTS.PRODUCT_TYPES'),
@@ -141,8 +139,8 @@ export class VariationsListComponent implements OnInit {
         this.onEdit(event);
         break;
       case 'remove':
-        this.deleteRecord(event)
-        break
+        this.deleteRecord(event);
+        break;
     }
   }
   onEdit(event) {

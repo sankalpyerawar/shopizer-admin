@@ -14,7 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @Component({
   selector: 'ngx-inventory-form',
   templateUrl: './inventory-form.component.html',
-  styleUrls: ['./inventory-form.component.scss']
+  styleUrls: ['./inventory-form.component.scss'],
 })
 export class InventoryFormComponent implements OnInit {
   @Input() inventory;
@@ -34,7 +34,7 @@ export class InventoryFormComponent implements OnInit {
     private storeService: StoreService,
     private configService: ConfigService,
     private activatedRoute: ActivatedRoute,
-    private inventoryService: InventoryService
+    private inventoryService: InventoryService,
   ) {
   }
 
@@ -77,7 +77,7 @@ export class InventoryFormComponent implements OnInit {
         discountedPrice: [''],
         startDate: [new Date()],
         endDate: [new Date()],
-      })
+      }),
     });
   }
   // private createForm() {

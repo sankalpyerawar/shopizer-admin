@@ -12,7 +12,7 @@ import { ShowcaseDialogComponent } from '../../../../shared/components/showcase-
 @Component({
   selector: 'ngx-prices-list',
   templateUrl: './prices-list.component.html',
-  styleUrls: ['./prices-list.component.scss']
+  styleUrls: ['./prices-list.component.scss'],
 })
 export class PricesListComponent implements OnInit {
   @Input() prices;
@@ -28,7 +28,7 @@ export class PricesListComponent implements OnInit {
 
   params = {
     productId: '',
-    inventoryId: ''
+    inventoryId: '',
   };
 
   constructor(
@@ -68,7 +68,7 @@ export class PricesListComponent implements OnInit {
         sort: true,
         custom: [
           { name: 'details', title: '<i class="nb-edit"></i>' },
-          { name: 'remove', title: '<i class="nb-trash"></i>' }
+          { name: 'remove', title: '<i class="nb-trash"></i>' },
         ],
       },
       pager: { display: false },
@@ -77,35 +77,29 @@ export class PricesListComponent implements OnInit {
           title: this.translate.instant('INVENTORY.INVENTORY_STORE'),
           type: 'string',
           editable: false,
-          valuePrepareFunction: (store) => {
-            return store.code;
-          }
+          valuePrepareFunction: (store) => store.code,
         },
         owner: {
           title: this.translate.instant('INVENTORY.INVENTORY_OWNER'),
           type: 'string',
           editable: false,
-          valuePrepareFunction: (owner) => {
-            return owner ? owner : 'null';
-          }
+          valuePrepareFunction: (owner) => owner ? owner : 'null',
         },
         quantity: {
           title: this.translate.instant('PRODUCT.QTY'),
           type: 'number',
-          editable: true
+          editable: true,
         },
         prices: {
           title: this.translate.instant('PRODUCT.PRICE'),
           type: 'string',
           editable: true,
-          valuePrepareFunction: (prices) => {
-            return (prices.length && prices[0].originalPrice) ? prices[0].originalPrice : 'null';
-          }
+          valuePrepareFunction: (prices) => (prices.length && prices[0].originalPrice) ? prices[0].originalPrice : 'null',
         },
         creationDate: {
           title: this.translate.instant('PRODUCT.CREATION_DATE'),
           type: 'string',
-          editable: false
+          editable: false,
         },
       },
     };

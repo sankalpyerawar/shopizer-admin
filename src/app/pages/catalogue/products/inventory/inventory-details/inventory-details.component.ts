@@ -6,14 +6,14 @@ import { InventoryService } from '../../services/inventory.service';
 @Component({
   selector: 'ngx-inventory-details',
   templateUrl: './inventory-details.component.html',
-  styleUrls: ['./inventory-details.component.scss']
+  styleUrls: ['./inventory-details.component.scss'],
 })
 export class InventoryDetailsComponent implements OnInit {
   inventory = {};
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private inventoryService: InventoryService
+    private inventoryService: InventoryService,
   ) {
     const productId = this.activatedRoute.snapshot.paramMap.get('productId');
     const inventoryId = this.activatedRoute.snapshot.paramMap.get('inventoryId');

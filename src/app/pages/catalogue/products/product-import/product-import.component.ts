@@ -8,7 +8,7 @@ import { ProductService } from '../services/product.service';
 @Component({
   selector: 'ngx-product-import',
   templateUrl: './product-import.component.html',
-  styleUrls: ['./product-import.component.scss']
+  styleUrls: ['./product-import.component.scss'],
 })
 export class ProductImportComponent implements OnInit {
 
@@ -43,7 +43,9 @@ export class ProductImportComponent implements OnInit {
 
   onFileSelected(event: any) {
     const file = event.target?.files?.[0] || event;
-    if (!file) return;
+    if (!file) {
+return;
+}
     if (!file.name.endsWith('.csv')) {
       this.toastr.error('Only CSV files are allowed');
       return;
@@ -66,7 +68,9 @@ export class ProductImportComponent implements OnInit {
     event.preventDefault();
     event.stopPropagation();
     const file = event.dataTransfer?.files?.[0];
-    if (file) this.onFileSelected(file);
+    if (file) {
+this.onFileSelected(file);
+}
   }
 
   private parseFile(file: File) {
@@ -85,7 +89,7 @@ export class ProductImportComponent implements OnInit {
       },
       error: () => {
         this.toastr.error('Failed to parse CSV file');
-      }
+      },
     });
   }
 
@@ -99,7 +103,7 @@ export class ProductImportComponent implements OnInit {
       () => {
         this.toastr.error('Validation request failed');
         this.isValidating = false;
-      }
+      },
     );
   }
 
@@ -122,12 +126,14 @@ export class ProductImportComponent implements OnInit {
       () => {
         this.toastr.error('Import failed');
         this.isImporting = false;
-      }
+      },
     );
   }
 
   downloadErrorReport() {
-    if (!this.importResult?.errors?.length) return;
+    if (!this.importResult?.errors?.length) {
+return;
+}
     const csv = Papa.unparse(this.importResult.errors);
     const blob = new Blob([csv], { type: 'text/csv' });
     const url = window.URL.createObjectURL(blob);
