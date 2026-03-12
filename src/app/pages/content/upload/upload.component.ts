@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NgxFileDropEntry } from 'ngx-file-drop';
+import { NgxFileDropEntry, FileSystemFileEntry } from 'ngx-file-drop';
 
 @Component({
   selector: 'upload',
