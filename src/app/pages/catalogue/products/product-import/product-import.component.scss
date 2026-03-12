@@ -1,0 +1,30 @@
+.drop-zone {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: #3366ff;
+  }
+}
+
+.browse-link {
+  color: #3366ff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.result-summary {
+  .badge {
+    font-size: 0.9em;
+    padding: 6px 12px;
+  }
+}
+
+.table-responsive {
+  max-height: 300px;
+  overflow-y: auto;
+}

@@ -11,6 +11,7 @@ import { ProductDiscountComponent } from '../product-discount/product-discount.c
 import { ProductOrderingComponent } from '../product-ordering/product-ordering.component';
 import { ProductAttributesComponent } from '../attribute/product-attributes/product-attributes.component';
 import { ProductProperties } from '../property/list/product-property.component';
+import { ProductImportComponent } from '../product-import/product-import.component';
 
 
 
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: 'product-ordering',
         component: ProductOrderingComponent
+      },
+      {
+        path: 'import',
+        component: ProductImportComponent
       },
       {
         path: 'product/:id',
