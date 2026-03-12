@@ -62,6 +62,7 @@
         "CREATE_PRODUCT": "Ajouter un produit",
         "PRODUCTS_LIST": "Liste des produits",
         "PRODUCT_ORDERING": "Commande de produits",
+        "IMPORT_PRODUCTS": "Importer des produits",
         "PRODUCT_ORDERING_DETAILS": "Sélectionnez une catégorie de producteurs dans le menu Dropdowan, les producteurs de médicaments et de gouttes pour réorganiser le placement",
         "PRODUCT_DETAILS": "Détails du produit",
         "LIST_INVENTORY": "Liste de l'inventaire",
